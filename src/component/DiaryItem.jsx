@@ -16,10 +16,19 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
 
     return (
         <div className="DiaryItem">
-            <div className={['img_section', `img_section_${emotionId}`].join(' ')} onClick={goDetail}>
-                <img src={getEmotionById(emotionId)} alt={`emotion${emotionId}`} />
+            <div 
+                className={['img_section', `img_section_${emotionId}`].join(' ')} 
+                onClick={goDetail}
+            >
+                <img 
+                    src={getEmotionById(emotionId)} 
+                    alt={`emotion${emotionId}`} 
+                />
             </div>
-            <div className="info_section" onClick={goDetail}>
+            <div 
+                className="info_section" 
+                onClick={goDetail}
+            >
                 <div className="date_wrapper">{new Date(parseInt(date)).toLocaleDateString()}</div>
                 <div className="content_wrapper">{content.slice(0, 25)}</div>
             </div>
